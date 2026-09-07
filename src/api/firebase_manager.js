@@ -39,7 +39,11 @@ export async function login(display_name) {
 export async function get_all_challenges() {
     try {
         const snap = await getDocs( collection(db, "challenges") );
-        return snap.data();
+        const all_data = snap.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+        return all_data;
     }
     catch (error) {
         console.error("Error fetching all challenges: ", error);
@@ -51,9 +55,13 @@ export async function get_all_challenges() {
 export async function fetch_scoreboard() {
     // order in decreasing order
     try {
-        const q = query(collection(db, "users"), orderBy("score", "desc"));
-        const snap = await getDocs(q);
-        return snap.data();
+        const snap = await getDocs(collection(db, "users"), orderBy("score", "desc"));
+        const all_data = snap.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        return all_data;
     }
     catch (error) {
         console.error("Error fetching all users: ", error);
@@ -63,16 +71,6 @@ export async function fetch_scoreboard() {
 
 
 // USER FUNCTIONS ====================================
-
-// get completed challenges
-export async function get_completed(uuid) {
-    
-} 
-
-// get used hints
-export async function get_used_hints(uuid) {
-    
-} 
 
 // check answer
 export async function check_answer(uuid, challenge_id, user_answer) {
