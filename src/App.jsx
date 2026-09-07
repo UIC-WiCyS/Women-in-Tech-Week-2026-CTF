@@ -10,7 +10,7 @@ import Scoreboard from './pages/Scoreboard';
 
 
 function App() {
-  const [user, setUser] = useState("")
+  const [user, setUser] = useState("temp")
 
 
   useEffect(() => {
