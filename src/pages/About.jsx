@@ -1,4 +1,4 @@
-export default function ChallengeCard() {
+export default function About() {
 
     return (
         <div>
