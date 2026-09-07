@@ -1,42 +1,64 @@
-import { collection, doc, addDoc } from "firebase/firestore";
-import { db } from "./firebase_config"
-
+import { collection, doc, getDoc, setDoc, getDocs, query } from "firebase/firestore";
+import { db } from "./firebase_config";
 
 // login
+// @param: display_name -- String
+// @return: {id: String, completed: [], hints_used: [], score: Int}
 export async function login(display_name) {
     try {
-        // check if user exists
-        if (true) {
-
+        // check if user exists 
+        const snap = await getDoc( doc(db, "users", display_name) );
+        // if so, login
+        if (snap.exists()) {
+            return {id: snap.id, ...snap.data()};
         }
 
         // create new item in users collection if not there
         // case doesn't matter
         else {
-            await setDoc(doc(db, "names", display_name.toLowerCase()), {
+            await setDoc(doc(db, "users", display_name.toLowerCase()), {
                 completed: [],
                 hints_used: [],
                 score: 0
             });
-            console.log("USER CREATED");
+            console.log("USER CREATED:", display_name);
+            
+            // login
+            const snap = await getDoc(doc(db, "users", display_name));
+            return {id: snap.id, ...snap.data()};
         }
     
-        // login
-        
     }
     catch (error) {
-        console.error("Error creating new user: ", error);
+        console.error("Error creating logging in: ", error);
+        return null;
     }
 } 
 
 // get all challenges
 export async function get_all_challenges() {
-    
+    try {
+        const snap = await getDocs( collection(db, "challenges") );
+        return snap.data();
+    }
+    catch (error) {
+        console.error("Error fetching all challenges: ", error);
+        return null;
+    }
 } 
 
 // fetch scoreboard
 export async function fetch_scoreboard() {
     // order in decreasing order
+    try {
+        const q = query(collection(db, "users"), orderBy("score", "desc"));
+        const snap = await getDocs(q);
+        return snap.data();
+    }
+    catch (error) {
+        console.error("Error fetching all users: ", error);
+        return null;
+    }
 } 
 
 

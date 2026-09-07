@@ -5,7 +5,7 @@ import ChallengeModal from "../components/ChallengeModal";
 
 export default function ChallengesOverview({session}) {
     
-    useEffect(()=>{    
+    useEffect(() => {    
         // check if session exists
 
         // fetch completed challenges
@@ -15,6 +15,8 @@ export default function ChallengesOverview({session}) {
 
     return (
         <section>
+            <p>Welcome, {session.id.toUpperCase()}</p>
+            <p>Score: {session.score}</p>
             <p>Challenges Overview</p>
         </section>
     );

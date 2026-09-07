@@ -7,10 +7,11 @@ import Login from './pages/Login';
 import About from './pages/About';
 import ChallengesOverview from './pages/ChallengesOverview';
 import Scoreboard from './pages/Scoreboard';
+import NotFound from './pages/NotFound';
 
 
 function App() {
-  const [user, setUser] = useState("temp")
+  const [user, setUser] = useState(null);
 
 
   useEffect(() => {
@@ -20,15 +21,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        { (!user || user=="") &&
-          <Route path="/" element={<Login />} />
+        { (!user || user==[]) &&
+          <Route path="/" element={<Login callback={setUser} />} />
         }
         {
           user && 
           <Route path="/" element={<ChallengesOverview session={user} />} />
         }
         <Route path="/about" element={<About />} />
-        <Route path="/scoreboard" element={<Scoreboard />} />
+        { user &&
+            <Route path="/scoreboard" element={<Scoreboard />} />
+        }
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )
