@@ -30,7 +30,7 @@ function App() {
             { user &&
                 <Header logout={handle_logout} />
             }
-            
+
             <Routes>
                 { (!user || user==[]) &&
                 <Route path="/" element={<Login callback={setUser} />} />
@@ -40,9 +40,7 @@ function App() {
                 <Route path="/" element={<ChallengesOverview session={user} />} />
                 }
                 <Route path="/about" element={<About />} />
-                { user &&
-                    <Route path="/scoreboard" element={<Scoreboard />} />
-                }
+                <Route path="/scoreboard" element={<Scoreboard />} />
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
