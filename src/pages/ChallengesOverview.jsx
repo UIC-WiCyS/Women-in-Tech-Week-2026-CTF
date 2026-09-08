@@ -2,20 +2,39 @@ import { useState, useEffect } from 'react';
 import styles from "./ChallengesOverview.module.css";
 import ChallengeCard from "../components/ChallengeCard";
 import ChallengeModal from "../components/ChallengeModal";
+import { get_all_challenges } from "../api/firebase_manager";
 
 export default function ChallengesOverview({session}) {
-    
-    useEffect(()=>{    
+    const [challenges, setChallenges] = useState([]);
+    const [completed, setCompleted] = useState([]);
+    const [openModal, setModal] = useState(false);
+
+    useEffect(() => {    
         // check if session exists
-
         // fetch completed challenges
+        const fetch_challenges = async () => {
+            var data = await get_all_challenges();
+            if (data != null)
+            {
+                // update
+                setChallenges(data);
+            }
+        };
 
-        // update
-    })
+        fetch_challenges();
+        setCompleted(session.completed);
+    }, [session])
+    
 
     return (
-        <section>
+        <section className='font-sync'>
+            <p>Welcome, {session.id.toUpperCase()}</p>
+            <p>Score: {session.score}</p>
             <p>Challenges Overview</p>
+            {/* create a map here */}
+            {challenges[0] &&
+                <ChallengeModal session={session} challenge={challenges[0]} />
+            }
         </section>
     );
 }

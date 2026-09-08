@@ -1,3 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sync: "Syncopate", sans-serif;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -12,7 +18,7 @@
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -30,6 +36,9 @@
   }
 
   background-image: url("./assets/wallpaper.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -67,7 +76,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
 }
-
+/* 
 h1,
 h2 {
   font-family: var(--heading);
@@ -95,7 +104,7 @@ h2 {
 }
 p {
   margin: 0;
-}
+} */
 
 code,
 .counter {
