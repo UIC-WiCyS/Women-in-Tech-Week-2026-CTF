@@ -27,14 +27,20 @@ export default function ChallengesOverview({session}) {
     
 
     return (
-        <section className='font-sync'>
+        <section className='font-sync text-white'>
             <p>Welcome, {session.id.toUpperCase()}</p>
             <p>Score: {session.score}</p>
             <p>Challenges Overview</p>
-            {/* create a map here */}
-            {challenges[0] &&
-                <ChallengeModal session={session} challenge={challenges[0]} />
+            {/* TODO: create a map here */}
+            {/* replace the [0] with the index of the map element */}
+            { challenges[0] &&
+                <ChallengeCard name={challenges[0].name} points={challenges[0].points} category={challenges[0].category} solved={true}/>
             }
+                {/* // if a challenge is clicked on, set setmodal to true */}
+                {challenges[0] && openModal &&
+                    <ChallengeModal session={session} challenge={challenges[0]} />
+                }
+            
         </section>
     );
 }
