@@ -1,4 +1,7 @@
 import styles from "./About.module.css";
+import heart from "../assets/heart.png";
+import wicysLogo from "../assets/WiCyS.png";
+import wicsLogo from "../assets/WiCS.png";
 
 export default function About() {
 
@@ -6,6 +9,22 @@ export default function About() {
         <div className="about">
 
             <section className={styles.aboutBody}>
+
+
+
+                <div className={styles.wicysHeart}>
+                    <img src={wicysLogo} className={styles.wicys}/>
+                    <img src={heart} className={styles.heart}/>
+                </div>
+
+                <div className={styles.wicsHeart}>
+                    <img src={wicsLogo} className={styles.wics}/>
+                    <img src={heart} className={styles.heart}/>
+                </div>
+
+
+                
+
                 <h1 className={styles.question}>What is </h1>
                 <h1 className={styles.question1}> Women in Tech Week?</h1>
                 <p className={styles.answer}>hduiwahiud iuefhaiue hiuhfau hiual hsauhd usahd 

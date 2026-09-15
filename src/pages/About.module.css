@@ -17,11 +17,14 @@
   width: 780px;
   max-width: 90%;
   height: 440px;
-  border: 7px solid #812990;
+  border: 9px solid #812990;
+  box-shadow: rgba(35, 35, 195, 0.2) 0px 7px 29px 0px;
   background: #EAD3FF;
   margin: 0 auto; 
   margin-top: 5%;
   margin-bottom: 5%;
+
+  position: relative;
 }
 
 .question, .question1 {
@@ -56,4 +59,44 @@
   font-size: 16px;
   font-weight: 700;
   margin-top: auto;
+}
+
+.heart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.wicysHeart {
+  position: absolute;
+  bottom: -85px;
+  left: -75px;
+  width: 200px;
+  height: 250px;
+}
+
+.wicsHeart {
+  position: absolute;
+  top: -50px;
+  right: -100px;
+  width: 200px;
+  height: 250px;
+}
+
+
+.wicys, .wics{
+  position: absolute;
+  object-fit: contain;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.wics{
+  width: 75px;
+  height: 75px;
+  
 }
