@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import styles from "./Login.module.css";
 import { login } from "../api/firebase_manager";
+import StartButton from "../assets/start_button.png"
+import WICYSLogo from "../assets/wicys_logo.webp"
+import WICSLogo from "../assets/wics_logo.png"
 
 export default function Login({callback}) {
     const [input, setInput] = useState("");
@@ -15,10 +18,40 @@ export default function Login({callback}) {
     }
 
     return (
-        <section className="font-sync">
-            <form onSubmit={handle_login}>
-                <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username"/>
-            </form>
+        <section className="font-pixel text-6xl text-center flex flex-col justify-center items-center">
+            <h1>WITW</h1>
+            <h1>CTF</h1>
+            
+            <div className='mt-8 bg-[#EAD3FF] border-[#812990] border-6 p-8 px-24 text-[#812990] text-center'>
+                <p className='text-center text-3xl'>
+                    A Mini-CTF celebrating women in tech fields 
+                    <br />
+                    for Women in Tech Week 2026 hosted at UIC
+                </p>
+
+                <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-[#CFEFEF] border-6 p-2 text-3xl">
+                    <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username"/>
+                </form>
+                {/* logos */}
+
+                <p className='absolute justify-self-center my-8'>&</p>
+                    
+                <div className='flex gap-16 justify-around mt-8'>
+                    <img src={WICYSLogo} style={{height: '6rem', width: 'auto', objectFit: "contain"}} />
+                    <img src={WICSLogo}  style={{height: '6rem', width: 'auto', objectFit: "contain"}} className='mx-4 justify-self-end' />
+                </div>
+            </div>
+
+            {/* login button */}
+            <button className='cursor-pointer' onClick={handle_login}>
+                <img src={StartButton}/>
+            </button>
+
+            {/* <3 */}
+            <div className='text-lg text-white justify-self-end'>
+                <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
+                <p>WiCyS & WiCS</p>
+            </div>
         </section>
     );
 }
