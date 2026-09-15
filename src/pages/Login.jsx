@@ -48,7 +48,7 @@ export default function Login({callback}) {
             </button>
 
             {/* <3 */}
-            <div className='text-lg text-white justify-self-end'>
+            <div className='absolute text-lg text-white justify-self-end bottom-0'>
                 <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
                 <p>WiCyS & WiCS</p>
             </div>

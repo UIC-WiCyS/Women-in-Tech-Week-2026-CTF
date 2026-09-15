@@ -22,7 +22,8 @@ export default function Scoreboard({}) {
     }, []);
 
     return (
-        <div>
+        <div className='flex flex-col'>
+            {/* TODO: make another map to display scores */}
             { scores[0] &&
                 <div>
                     <p>{scores[0].id}</p>
@@ -33,6 +34,12 @@ export default function Scoreboard({}) {
             <h3>Log in to view the challenges</h3>
             <h3>Head back to home: </h3>
             <Link to="/" className="">Home</Link>
+
+            {/* <3 */}
+            <div className='absolute bottom-0 self-center text-center text-lg text-white text-center justify-self-center font-pixel'>
+                <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
+                <p>WiCyS & WiCS</p>
+            </div>
         </div>
     );
 }

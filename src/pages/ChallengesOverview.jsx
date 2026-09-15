@@ -41,6 +41,11 @@ export default function ChallengesOverview({session}) {
                     <ChallengeModal session={session} challenge={challenges[0]} />
                 }
             
+            {/* <3 */}
+            <div className='absolute bottom-0 text-lg text-white text-center justify-self-center font-pixel'>
+                <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
+                <p>WiCyS & WiCS</p>
+            </div>
         </section>
     );
 }

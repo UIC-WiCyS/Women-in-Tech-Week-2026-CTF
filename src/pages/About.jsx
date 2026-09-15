@@ -1,7 +1,7 @@
 import styles from "./About.module.css";
 import heart from "../assets/heart.png";
-import wicysLogo from "../assets/WiCyS.png";
-import wicsLogo from "../assets/WiCS.png";
+import wicysLogo from "../assets/wicys_logo.webp";
+import wicsLogo from "../assets/wics_logo.png";
 
 export default function About() {
 
@@ -34,7 +34,11 @@ export default function About() {
                 </p> 
             </section>
         
-            <h2 className={styles.aboutFooter}>Made with &lt;3 by WiCyS & WiCS</h2>
+            {/* <3 */}
+            <div className='absolute bottom-0 text-lg text-white text-center justify-self-center font-pixel'>
+                <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
+                <p>WiCyS & WiCS</p>
+            </div>
 
         </div>
         

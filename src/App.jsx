@@ -35,14 +35,18 @@ function App() {
                 { (!user || user==[]) &&
                 <Route path="/" element={<Login callback={setUser} />} />
                 }
-                {
-                user && 
+                { user && 
                 <Route path="/" element={<ChallengesOverview session={user} />} />
                 }
+                { user && 
                 <Route path="/about" element={<About />} />
+                }
+                { user && 
                 <Route path="/scoreboard" element={<Scoreboard />} />
-
+                }
+                
                 <Route path="*" element={<NotFound />} />
+                
             </Routes>
         </BrowserRouter>
     )
