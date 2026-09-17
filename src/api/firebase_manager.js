@@ -98,7 +98,7 @@ export async function check_answer(uuid, challenge_id, user_answer) {
             if (!user_snap.data().completed.includes(challenge_id)) {
                 await updateDoc(user_ref, {
                     // award points to user if so
-                    points: chal_snap.data().points + user_snap.data().score,
+                    score: (chal_snap.data().points + user_snap.data().score),
                     // add to user completed list
                     completed: [...user_snap.data().completed, challenge_id]
                 });
