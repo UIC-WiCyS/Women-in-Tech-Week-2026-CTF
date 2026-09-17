@@ -18,34 +18,33 @@ export default function Login({callback}) {
     }
 
     return (
-        <section className="font-pixel text-6xl text-center flex flex-col justify-center items-center">
-            <h1>WITW</h1>
-            <h1>CTF</h1>
-            
-            <div className='mt-8 bg-[#EAD3FF] border-[#812990] border-6 p-8 px-24 text-[#812990] text-center'>
-                <p className='text-center text-3xl'>
-                    A Mini-CTF celebrating women in tech fields 
-                    <br />
-                    for Women in Tech Week 2026 hosted at UIC
-                </p>
+        <section className="font-pixel text-center flex flex-col justify-center items-center min-h-screen">
+            <div className='flex flex-col items-center gap-2 w-11/12'>
+                <div className='text-6xl -mt-40'>
+                    <h1 className={styles.glitch} data-text="WITW">WITW</h1>
+                    <h1 className={styles.glitch} data-text="CTF">CTF</h1>
+                </div>
 
-                <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-[#CFEFEF] border-6 p-2 text-3xl">
-                    <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username"/>
-                </form>
-                {/* logos */}
+                <div className='bg-[#EAD3FF] border-[#812990] border-8 py-6 px-10 text-[#812990] flex flex-col items-center w-full max-w-lg' style={{boxShadow: '4px 4px 0 #CF9BFF'}}>
+                    <p className='text-2xl mb-6'>
+                        A Mini-CTF celebrating brilliant women in tech
+                        for, WITW 2026 hosted at UIC
+                    </p>
 
-                <p className='absolute justify-self-center my-8'>&</p>
-                    
-                <div className='flex gap-16 justify-around mt-8'>
-                    <img src={WICYSLogo} style={{height: '6rem', width: 'auto', objectFit: "contain"}} />
-                    <img src={WICSLogo}  style={{height: '6rem', width: 'auto', objectFit: "contain"}} className='mx-4 justify-self-end' />
+                    <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-white border-6 p-3 text-2xl mb-6 w-4/5">
+                        <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username" className="w-full text-center"/>
+                    </form>
+
+                    <div className='flex gap-6 justify-center items-center mb-6'>
+                        <img src={WICYSLogo} style={{height: '5rem', width: 'auto', objectFit: "contain"}} />
+                        <img src={WICSLogo}  style={{height: '5rem', width: 'auto', objectFit: "contain"}} />
+                    </div>
+
+                    <button className='cursor-pointer' onClick={handle_login}>
+                        <img src={StartButton} style={{maxWidth: '150px'}}/>
+                    </button>
                 </div>
             </div>
-
-            {/* login button */}
-            <button className='cursor-pointer' onClick={handle_login}>
-                <img src={StartButton}/>
-            </button>
 
             {/* <3 */}
             <div className='absolute text-lg text-white justify-self-end bottom-0'>

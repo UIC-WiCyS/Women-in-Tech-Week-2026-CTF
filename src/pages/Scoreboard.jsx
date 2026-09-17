@@ -4,17 +4,26 @@ import styles from "./Scoreboard.module.css";
 import { fetch_scoreboard } from '../api/firebase_manager';
 
 export default function Scoreboard({}) {
-    const [scores, setScore] = useState([])
+    const [scores, setScore] = useState([
+        { id: "player1", score: 850 },
+        { id: "player2", score: 720 }
+    ])
 
     // fetch data
     useEffect(() => {
         // fetch scoreboard
         const fetch_scores = async () => {
             var data = await fetch_scoreboard();
-            if (data != null)
+            if (data != null && data.length > 0)
             {
                 // update
                 setScore(data);
+            } else {
+                // mock data for testing
+                setScore([
+                    { id: "player1", score: 850 },
+                    { id: "player2", score: 720 }
+                ]);
             }
         };
 
@@ -22,18 +31,21 @@ export default function Scoreboard({}) {
     }, []);
 
     return (
-        <div className='flex flex-col'>
-            {/* TODO: make another map to display scores */}
-            { scores[0] &&
-                <div>
-                    <p>{scores[0].id}</p>
-                    <p>{scores[0].score}</p>
-                </div>
-            }
+        <div className={styles.scoreboardContainer}>
+            <h1 className={styles.title}>Scoreboard</h1>
 
-            <h3>Log in to view the challenges</h3>
-            <h3>Head back to home: </h3>
-            <Link to="/" className="">Home</Link>
+            <div className={styles.leaderboard}>
+                {scores.map((entry, index) => (
+                    <div key={index} className={styles.scoreEntry}>
+                        <span className={styles.username}>{entry.id}</span>
+                        <span className={styles.points}>{entry.score}</span>
+                    </div>
+                ))}
+            </div>
+
+            {scores.length === 0 && (
+                <p className={styles.noScores}>No scores yet. Complete challenges to appear on the leaderboard!</p>
+            )}
 
             {/* <3 */}
             <div className='absolute bottom-0 self-center text-center text-lg text-white text-center justify-self-center font-pixel'>
