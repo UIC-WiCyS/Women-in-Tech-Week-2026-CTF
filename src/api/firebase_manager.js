@@ -61,12 +61,12 @@ export async function get_all_challenges() {
 export async function fetch_scoreboard() {
     // order in decreasing order
     try {
-        const snap = await getDocs(collection(db, "users"), orderBy("score", "desc"));
+        const q = query(collection(db, "users"), orderBy("score", "desc"));
+        const snap = await getDocs(q);
         const all_data = snap.docs.map(doc => ({
             id: doc.id,
             score: doc.data().score
         }));
-
         return all_data;
     }
     catch (error) {
