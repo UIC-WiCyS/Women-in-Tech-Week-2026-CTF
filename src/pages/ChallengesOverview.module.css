@@ -1,0 +1,29 @@
+.overview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 967px;
+    height: 567px;
+
+    border: 7px solid #812990;
+    background: #EAD3FF;
+    box-shadow: 4px 4px 0 0 #CF9BFF;
+}
+
+.singleChallenge {
+    
+    padding: 15px;
+    max-width: 500px;
+    width: 90%;
+    color: var(--WiCyS-Purple, #812990);
+    font-family: Syncopate;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px; /* 133.333% */
+}
+
+.close{
+    /*x on the top right*/
+}
