@@ -5,14 +5,15 @@
 
     width: 967px;
     height: 567px;
-
     border: 7px solid #812990;
     background: #EAD3FF;
     box-shadow: 4px 4px 0 0 #CF9BFF;
 }
 
 .singleChallenge {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     max-width: 500px;
     width: 90%;
@@ -21,9 +22,31 @@
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 32px; /* 133.333% */
+    line-height: 32px; 
 }
 
-.close{
-    /*x on the top right*/
+
+/*styling for the whole challenges*/
+.challengeMap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.header{
+    display: flex;
+    column-gap: 55%;
+    justify-content: center;
+    margin-top: 5%;
+    color: #56DFDE;
+    text-align: center;
+    font-family: VT323;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
 }
