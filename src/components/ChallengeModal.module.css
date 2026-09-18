@@ -20,6 +20,7 @@
     padding: 0.5rem 1rem;
     cursor: pointer;
     height: fit-content; 
+    text-align: left;
 }
 
 .files_download:hover {
