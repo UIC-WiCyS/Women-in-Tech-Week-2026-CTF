@@ -7,7 +7,7 @@ import { get_all_challenges } from "../api/firebase_manager";
 export default function ChallengesOverview({session}) {
     const [challenges, setChallenges] = useState([]);
     const [completed, setCompleted] = useState([]);
-    const [openModal, setModal] = useState(false);
+    const [openModal, setModal] = useState(true);
 
     useEffect(() => {    
         // check if session exists
@@ -38,7 +38,7 @@ export default function ChallengesOverview({session}) {
             }
                 {/* // if a challenge is clicked on, set setmodal to true */}
                 {challenges[0] && openModal &&
-                    <ChallengeModal session={session} challenge={challenges[0]} />
+                    <ChallengeModal session={session} challenge={challenges[2]} callback={setModal} />
                 }
             
             {/* <3 */}

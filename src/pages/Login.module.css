@@ -1,9 +1,6 @@
-/* #login {
-  font-weight: 800;
-  font-style: normal;
-  background: #CECECE;
-  color: #123B79;
+#login {
   text-align: center;
-  padding: 1rem 2rem;
-  border-radius: 25rem;
-} */
+  border: none;
+  outline: none;
+  width: 100%;
+}
