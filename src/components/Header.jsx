@@ -18,7 +18,7 @@ export default function Header({logout}) {
             </div>
 
             <Link className={styles.nav_link} to="/scoreboard">Scoreboard</Link>
-            <button className={styles.nav_link} onClick={logout}>Logout</button>
+            <Link className={styles.nav_link} to="/" onClick={logout}>Logout</Link>
         </nav>
     );
 }
