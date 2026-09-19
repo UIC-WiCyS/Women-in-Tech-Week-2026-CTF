@@ -25,8 +25,8 @@ export default function Login({callback}) {
             </div>
             
             <div className='text-[#EAD3FF] text-7xl'>
-                <h1>WITW</h1>
-                <h1>CTF</h1>
+                <h1 className={styles.glitch} data-text="WITW">WITW</h1>
+                <h1 className={styles.glitch} data-text="CTF">CTF</h1>
             </div>
             
             <div className='mt-8 bg-[#EAD3FF] border-[#812990] border-6 p-8 px-24 text-[#812990] text-center'>
@@ -46,12 +46,13 @@ export default function Login({callback}) {
                 <div className='flex gap-16 justify-around mt-8'>
                     <img src={WICYSLogo} style={{height: '6rem', width: 'auto', objectFit: "contain"}} />
                     <img src={WICSLogo}  style={{height: '6rem', width: 'auto', objectFit: "contain"}} className='mx-4 justify-self-end' />
-                </div>
-            </div>
 
-            {/* login button */}
+                </div>
+
+            </div>
+            
             <button className='cursor-pointer' onClick={handle_login}>
-                <img src={StartButton}/>
+                <img src={StartButton} style={{maxWidth: '150px'}}/>
             </button>
 
             {/* <3 */}

@@ -45,7 +45,6 @@ function App() {
                 { user && 
                 <Route path="/scoreboard" element={<Scoreboard />} />
                 }
-                
                 <Route path="*" element={<NotFound />} />
                 
             </Routes>
