@@ -25,16 +25,7 @@ const imageMap = {
 };
 
 export default function ChallengesOverview({session}) {
-    const [challenges, setChallenges] = useState([
-        { id: "1", name: "Ada’s Secret Note", category: "x", points: 100, prompt: "xxx...", solvedImg: img1 },
-        { id: "2", name: "Centaur Coordinates", category: "x", points: 125, prompt: "xxx...", solvedImg: img2 },
-        { id: "3", name: "Hidden Frequency", category: "x", points: 100, prompt: "xxx...", solvedImg: img3 },
-        { id: "4", name: "WiCyS Steganography/ XOR", category: "x", points: 150, prompt: "xxx...", solvedImg: img4 },
-        { id: "5", name: "Karen Spärck Jones", category: "x", points: 125, prompt: "xxx...", solvedImg: img5 },
-        { id: "6", name: "Hidden Coordinates", category: "x", points: 125, prompt: "xxx...", solvedImg: img6 },
-        { id: "7", name: "Katherine’s Launch Code", category: "x", points: 125, prompt: "xxx...", solvedImg: img7 },
-        { id: "8", name: "Model Verification", category: "x", points: 150, prompt: "xxx...", solvedImg: img8 }
-    ]);
+    const [challenges, setChallenges] = useState([]);
     
     //const [completed, setCompleted] = useState([]);
     const [completed, setCompleted] = useState(["1"]);  //remove- just for testing
@@ -46,7 +37,6 @@ export default function ChallengesOverview({session}) {
         // fetch completed challenges
         const fetch_challenges = async () => {
             var data = await get_all_challenges();
-            console.log("testing this:", data);
             if (data != null)
             {
                 // update
@@ -60,14 +50,12 @@ export default function ChallengesOverview({session}) {
     
 
     return (
-        <section className='font-sync text-white'>
+        <section className='font-sync text-white' style={{height: "75vh"}}>
             <div className={styles.header}> 
-                <p>Welcome, {session.id.toUpperCase()}</p>
-                <p>Score: {session.score}</p>
+                <p className='text-left'>Welcome, {session.id.toUpperCase()}</p>
+                <h1 className={styles.title}>Challenges Overview</h1>
+                <p className='text-right'>Score: {session.score}</p>
             </div>
-            {/*<p>Challenges Overview</p>*/}
-            {/* TODO: create a map here */}
-            {/* replace the [0] with the index of the map element */}
             
             <div className={styles.challengeMap}> 
                 {challenges.map((challenge) => (
@@ -85,22 +73,9 @@ export default function ChallengesOverview({session}) {
             </div>
             
             {/*check the boolean state && check there is a selected challenge && get the challenge*/}
-            {openModal && selectedChallenge &&(
-                <div className={styles.overview}>
-                    <div className={styles.singleChallenge}>
-                        <ChallengeModal session={session} challenge={selectedChallenge} />
-                    <button onClick={() => setModal(false)} className={styles.close}>Close</button>
-        </div>
-    </div>
-               
+            {openModal && selectedChallenge && (
+                <ChallengeModal session={session} challenge={selectedChallenge} callback={setModal} />
             )}
-            
-            {/* <3 */}
-            
-            <div className='absolute bottom-0 text-lg text-white text-center justify-self-center font-pixel'>
-                <p>Made with <a href="https://github.com/UIC-WiCyS/Women-in-Tech-Week-2026-CTF" target='_blank'>{'<3'}</a> by</p>
-                <p>WiCyS & WiCS</p>
-            </div>
         </section>
     );
 }
