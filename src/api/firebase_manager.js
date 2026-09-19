@@ -61,12 +61,12 @@ export async function get_all_challenges() {
 export async function fetch_scoreboard() {
     // order in decreasing order
     try {
-        const snap = await getDocs(collection(db, "users"), orderBy("score", "desc"));
+        const q = query(collection(db, "users"), orderBy("score", "desc"));
+        const snap = await getDocs(q);
         const all_data = snap.docs.map(doc => ({
             id: doc.id,
             score: doc.data().score
         }));
-
         return all_data;
     }
     catch (error) {
@@ -98,7 +98,7 @@ export async function check_answer(uuid, challenge_id, user_answer) {
             if (!user_snap.data().completed.includes(challenge_id)) {
                 await updateDoc(user_ref, {
                     // award points to user if so
-                    points: chal_snap.data().points + user_snap.data().score,
+                    score: (chal_snap.data().points + user_snap.data().score),
                     // add to user completed list
                     completed: [...user_snap.data().completed, challenge_id]
                 });

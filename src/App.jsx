@@ -22,6 +22,7 @@ function App() {
   
     async function handle_logout() {
         setUser(null);
+        // window.location.reload();
     }
 
 
@@ -44,7 +45,6 @@ function App() {
                 { user && 
                 <Route path="/scoreboard" element={<Scoreboard />} />
                 }
-                
                 <Route path="*" element={<NotFound />} />
                 
             </Routes>
