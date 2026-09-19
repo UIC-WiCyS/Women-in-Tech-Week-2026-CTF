@@ -25,13 +25,13 @@
   align-items: center;
   justify-content: flex-start;;
   padding: 1.5rem;
-  width: 780px;
+  width: 850px;
   max-width: 90%;
-  height: 440px;
+  height: 500px;
   border: 9px solid #812990;
   box-shadow: rgba(35, 35, 195, 0.2) 0px 7px 29px 0px;
   background: #EAD3FF;
-  margin: 0 auto; 
+  margin: 0 auto;
   margin-top: 5%;
   margin-bottom: 5%;
 
@@ -61,6 +61,16 @@
   font-size: 30px;
   font-weight: 400;
   line-height: 1.2;
+}
+
+.answer a {
+  text-decoration: underline;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.answer a:hover {
+  color: #008080;
 }
 
 .aboutFooter {

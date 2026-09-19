@@ -27,10 +27,10 @@ export default function About() {
 
                 <h1 className={styles.question}>What is </h1>
                 <h1 className={styles.question1}> Women in Tech Week?</h1>
-                <p className={styles.answer}>hduiwahiud iuefhaiue hiuhfau hiual hsauhd usahd 
-                    iusadh iusad hiuwakfdkjf  dasdasd asd asd sad sh th rgg hkhk hiu hiu h jhk 
-                    iu h khui tbu5b65ecv bo78n bt6nu uybtyuiu  98n y8ym87iu  hkjashf iaksdhkjsadh
-                     kjsahdkhka sdas r gadf dsf fweawdadsa
+                <p className={styles.answer}>
+                  Women in Tech Week is a full week of fun and professional events that help students grow, connect, and explore opportunities in tech. WiCS wraps up the week on Friday with our annual scavenger hunt!
+                  <br /><br />
+                  <a href="https://bit.ly/4xlrYc8" target="_blank" rel="noopener noreferrer">Learn more about all the events happening throughout the week.</a>
                 </p> 
                 <br />
                 <a className={styles.answer} style={{color: "#812990", fontSize:"large"}} href="https://dolomite-milkshake-eae.notion.site/Women-in-Tech-Week-Mini-CTF-3db487455f7b804cac11ee7dbc16d47e?pvs=143" target="_blank">💜Cyberpack🩵</a>
