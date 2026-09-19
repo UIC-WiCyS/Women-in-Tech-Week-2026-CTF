@@ -5,6 +5,7 @@ import { db } from "./firebase_config";
 // @param: display_name -- String
 // @return: {id: String, completed: [String], score: Int}
 export async function login(display_name) {
+    display_name = display_name.trimEnd().toLowerCase();
     try {
         // check if user exists 
         const snap = await getDoc( doc(db, "users", display_name) );
@@ -16,7 +17,7 @@ export async function login(display_name) {
         // create new item in users collection if not there
         // case doesn't matter
         else {
-            await setDoc(doc(db, "users", display_name.toLowerCase()), {
+            await setDoc(doc(db, "users", display_name), {
                 completed: [],
                 score: 0
             });

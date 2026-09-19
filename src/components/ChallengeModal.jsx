@@ -17,9 +17,8 @@ export default function ChallengeModal({session, challenge, callback}) {
         }
         };
         window.addEventListener('keydown', handleEsc);
-
         return () => {
-        window.removeEventListener('keydown', handleEsc);
+            window.removeEventListener('keydown', handleEsc);
         };
     }, []);
     
@@ -36,11 +35,13 @@ export default function ChallengeModal({session, challenge, callback}) {
         if (success)
         {
             setModal("success")
+            // TODO: reset
+            callback(false)
         }
         else
         {
             setModal("fail")
-            // shaking animation
+            // TODO: shaking animation
         }
     }
 
@@ -62,21 +63,23 @@ export default function ChallengeModal({session, challenge, callback}) {
 
             {/* dynamically grab prompt and its tags */}
             <div className="text-xl" dangerouslySetInnerHTML={{ __html: challenge.prompt }} />
-            
+
             {/* files */}
-            <div>
-                <p className='text-left underline text-xl text-[#1B529B]'>Files:</p>
-                <div id="files-list" className='flex gap-16'>
-                {
-                    challenge.files.map((file_path, i)=>(
-                        <a className={styles.files_download} key={i} href={import.meta.env.BASE_URL + "challenges/" + file_path} download>
-                            <Download size={20}/>
-                            {file_path}
-                        </a>
-                    ))
-                }
+            { challenge.files.length !== 0 && 
+                <div>
+                    <p className='text-left underline text-xl text-[#1B529B]'>Files:</p>
+                    <div id="files-list" className='flex gap-16'>
+                    {
+                        challenge.files.map((file_path, i)=>(
+                            <a className={styles.files_download} key={i} href={import.meta.env.BASE_URL + "challenges/" + file_path} download>
+                                <Download size={20}/>
+                                {file_path}
+                            </a>
+                        ))
+                    }
+                    </div>
                 </div>
-            </div>
+            }
 
                 
             {/* buttons for hints */}

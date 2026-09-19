@@ -32,6 +32,8 @@ export default function About() {
                     iu h khui tbu5b65ecv bo78n bt6nu uybtyuiu  98n y8ym87iu  hkjashf iaksdhkjsadh
                      kjsahdkhka sdas r gadf dsf fweawdadsa
                 </p> 
+                <br />
+                <a className={styles.answer} style={{color: "#812990", fontSize:"large"}} href="https://dolomite-milkshake-eae.notion.site/Women-in-Tech-Week-Mini-CTF-3db487455f7b804cac11ee7dbc16d47e?pvs=143" target="_blank">💜Cyberpack🩵</a>
             </section>
         
             

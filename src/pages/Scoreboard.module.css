@@ -40,6 +40,7 @@
   border: 3px solid #123B79;
   /* box-shadow: 0 4px 0 #123B79; */
   transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px #123B79;
 }
 
 .scoreEntry:hover {

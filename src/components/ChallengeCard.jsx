@@ -6,7 +6,7 @@ export default function ChallengeCard({ onClick, name, points, category, solved,
             {solved ? ( 
                 <div>
                     <img 
-                        src={solvedImg} 
+                        src={import.meta.env.BASE_URL + "animalsChallenges/" + solvedImg + ".png"} 
                         className={styles.img} 
                     />
                     <p className="text-[#1B529B]">✔️COMPLETED</p>
