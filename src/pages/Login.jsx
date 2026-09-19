@@ -4,6 +4,7 @@ import { login } from "../api/firebase_manager";
 import StartButton from "../assets/start_button.png"
 import WICYSLogo from "../assets/wicys_logo.webp"
 import WICSLogo from "../assets/wics_logo.png"
+import Hearts from "../assets/hearts.png"
 
 export default function Login({callback}) {
     const [input, setInput] = useState("");
@@ -18,11 +19,17 @@ export default function Login({callback}) {
     }
 
     return (
-        <section className="font-pixel text-center flex flex-col justify-center items-center min-h-screen">
-            <div className='flex flex-col items-center gap-2 w-11/12'>
+        <section className="select-none font-pixel text-center flex flex-col justify-center items-center min-h-screen">
+            <div className='flex fixed left-8 top-8'>
+                <img src={Hearts} style={{height: '3rem', width: 'auto', objectFit: "contain"}}/>
+            </div>
+            
+            <div className='text-[#EAD3FF] text-7xl'>
+                <div className='flex flex-col items-center gap-2 w-11/12'>
                 <div className='text-6xl -mt-40'>
                     <h1 className={styles.glitch} data-text="WITW">WITW</h1>
-                    <h1 className={styles.glitch} data-text="CTF">CTF</h1>
+                        <h1 className={styles.glitch} data-text="CTF">CTF</h1>
+            </div>
                 </div>
 
                 <div className='bg-[#EAD3FF] border-[#812990] border-8 py-6 px-10 text-[#812990] flex flex-col items-center w-full max-w-lg' style={{boxShadow: '4px 4px 0 #CF9BFF'}}>
@@ -31,9 +38,9 @@ export default function Login({callback}) {
                         for, WITW 2026 hosted at UIC
                     </p>
 
-                    <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-white border-6 p-3 text-2xl mb-6 w-4/5">
-                        <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username" className="w-full text-center"/>
-                    </form>
+                <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-[#CFEFEF] border-6 p-2 text-3xl text-center">
+                    <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username"/>
+                </form>
 
                     <div className='flex gap-6 justify-center items-center mb-6'>
                         <img src={WICYSLogo} style={{height: '5rem', width: 'auto', objectFit: "contain"}} />
@@ -43,6 +50,12 @@ export default function Login({callback}) {
                     <button className='cursor-pointer' onClick={handle_login}>
                         <img src={StartButton} style={{maxWidth: '150px'}}/>
                     </button>
+                <p className='absolute justify-self-center my-8'>&</p>
+                    
+                {/* logos */}
+                <div className='flex gap-16 justify-around mt-8'>
+                    <img src={WICYSLogo} style={{height: '6rem', width: 'auto', objectFit: "contain"}} />
+                    <img src={WICSLogo}  style={{height: '6rem', width: 'auto', objectFit: "contain"}} className='mx-4 justify-self-end' />
                 </div>
             </div>
 

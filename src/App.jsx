@@ -22,6 +22,7 @@ function App() {
   
     async function handle_logout() {
         setUser(null);
+        // window.location.reload();
     }
 
 
