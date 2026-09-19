@@ -6,12 +6,9 @@
   width: 100%;
   gap: 2rem;
   padding: 2rem 1rem;
-  min-height: 100vh;
-  background-image: url("../assets/scoreBg.png");
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
+  overflow-y: scroll;
+  height: 75vh;
 }
 
 .title {
@@ -25,11 +22,13 @@
 }
 
 .leaderboard {
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  width: 100%;
-  max-width: 1100px;
+  gap: 1.5rem;
+  overflow-y: scroll;
+  height: 90%;
+  scrollbar-color: #1B529B #ffffff00;
 }
 
 .scoreEntry {
@@ -39,8 +38,7 @@
   padding: 0.8rem 2.5rem;
   background: #75B4B4;
   border: 3px solid #123B79;
-  border-radius: 50px;
-  box-shadow: 0 4px 0 #123B79;
+  /* box-shadow: 0 4px 0 #123B79; */
   transition: transform 0.2s ease;
 }
 

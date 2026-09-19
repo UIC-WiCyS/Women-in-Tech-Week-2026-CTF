@@ -46,7 +46,7 @@ export default function ChallengeModal({session, challenge, callback}) {
 
     return (
         <div id="challenge-modal" className='absolute w-3/4 z-1000 top-1/2 left-1/2 h-3/4 overflow-y-scroll text-center bg-[#EAD3FF] border-[#812990] border-4 text-[#812990] font-pixel p-6 px-10 flex flex-col gap-4' 
-            style={{transform: "translate(-50%, -50%)", scrollbarColor: "gray #ffffff00", }}>
+            style={{transform: "translate(-50%, -50%)", scrollbarColor: "#1B529B #ffffff00", }}>
             <div className='flex justify-between flex-wrap-reverse text-wrap'>
                 <div className='font-sync text-left text-2xl'>
                     <p className='font-bold'>{challenge.name.toUpperCase()}</p>
