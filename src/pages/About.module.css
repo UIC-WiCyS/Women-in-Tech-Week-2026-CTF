@@ -73,6 +73,17 @@
   color: #008080;
 }
 
+.cyberpackLink {
+  color: #812990;
+  font-size: large;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.cyberpackLink:hover {
+  color: #008080;
+}
+
 .aboutFooter {
   color: #FFF;
   text-align: center;

@@ -33,7 +33,7 @@ export default function About() {
                   <a href="https://bit.ly/4xlrYc8" target="_blank" rel="noopener noreferrer">Learn more about all the events happening throughout the week.</a>
                 </p> 
                 <br />
-                <a className={styles.answer} style={{color: "#812990", fontSize:"large"}} href="https://dolomite-milkshake-eae.notion.site/Women-in-Tech-Week-Mini-CTF-3db487455f7b804cac11ee7dbc16d47e?pvs=143" target="_blank">💜Cyberpack🩵</a>
+                <a className={styles.cyberpackLink} href="https://dolomite-milkshake-eae.notion.site/Women-in-Tech-Week-Mini-CTF-3db487455f7b804cac11ee7dbc16d47e?pvs=143" target="_blank">💜Cyberpack🩵</a>
             </section>
         
             
