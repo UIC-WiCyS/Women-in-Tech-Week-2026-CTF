@@ -22,7 +22,7 @@ export default function Scoreboard({}) {
     }, []);
 
     return (
-        <div style={{height: "75vh"}}>
+        <section style={{height: "75vh"}}>
             <h1 className={styles.title}>Scoreboard</h1>
 
             <div className={styles.leaderboard}>
@@ -38,6 +38,6 @@ export default function Scoreboard({}) {
                 <p className={styles.noScores}>No scores yet. Complete challenges to appear on the leaderboard!</p>
             )}
 
-        </div>
+        </section>
     );
 }
