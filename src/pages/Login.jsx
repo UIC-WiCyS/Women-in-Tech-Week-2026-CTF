@@ -33,7 +33,7 @@ export default function Login({callback}) {
                 </p>
 
                 <form onSubmit={handle_login} className="font-pixel text-[#812990] bg-[#CFEFEF] border-6 p-2 text-3xl text-center">
-                    <input id={styles.login} onChange={e => setInput(e.target.value)} placeholder="Enter Your Username"/>
+                    <input id={styles.login} onChange={e => setInput(e.target.value)} required placeholder="Enter Your Username"/>
                 </form>
 
                 <p className='absolute justify-self-center my-8'>&</p>

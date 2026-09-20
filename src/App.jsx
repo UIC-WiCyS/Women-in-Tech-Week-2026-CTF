@@ -44,7 +44,7 @@ function App() {
 
     return (
         <BrowserRouter>
-            { cookies.get('user_cookie')!=null && user &&
+            { cookies.get('user_cookie')!=undefined && user &&
                 <Header logout={handle_logout} />
             }
 
@@ -61,10 +61,11 @@ function App() {
                 { user && 
                 <Route path="/scoreboard" element={<Scoreboard />} />
                 }
+
+                {/* 404 */}
                 {   (cookies.get('user_cookie')===undefined) &&
                     <Route path="*" element={<NotFound />} />
                 }
-                
             </Routes>
         </BrowserRouter>
     )
