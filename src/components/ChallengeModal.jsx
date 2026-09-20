@@ -35,7 +35,10 @@ export default function ChallengeModal({session, challenge, callback}) {
         if (success)
         {
             setModal("success")
-            callback(false)
+            setTimeout(() => {
+                setModal("")
+                callback(false)
+            }, 1500); 
         }
         else
         {
@@ -111,6 +114,10 @@ export default function ChallengeModal({session, challenge, callback}) {
                 {
                     isCorrect=="empty" &&
                     <p className='text-red-600'>Find the flag!</p>
+                }
+                {
+                    isCorrect=="success" &&
+                    <p className='text-green-600'>Correct!</p>
                 }
                 {
                     isCorrect=="fail" &&
