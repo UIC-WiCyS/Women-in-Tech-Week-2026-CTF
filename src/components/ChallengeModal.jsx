@@ -22,7 +22,7 @@ export default function ChallengeModal({session, challenge, callback}) {
         };
     }, []);
     
-    async function handle_answer_check(event) {
+    async function handle_answer_check(event) { 
         event.preventDefault(); 
         // if empty
         if (!userInput) {
@@ -35,19 +35,23 @@ export default function ChallengeModal({session, challenge, callback}) {
         if (success)
         {
             setModal("success")
-            // TODO: reset
             callback(false)
         }
         else
         {
             setModal("fail")
-            // TODO: shaking animation
+            document.getElementById("challenge-modal").classList.add(styles.shakey);
+            // shaking animation
+            setTimeout(() => {
+                document.getElementById("challenge-modal").classList.remove(styles.shakey);
+                setModal("")
+            }, 3000); 
         }
     }
 
     return (
-        <div id="challenge-modal" className='absolute w-3/4 z-1000 top-1/2 left-1/2 h-3/4 overflow-y-scroll text-center bg-[#EAD3FF] border-[#812990] border-4 text-[#812990] font-pixel p-6 px-10 flex flex-col gap-4' 
-            style={{transform: "translate(-50%, -50%)", scrollbarColor: "#1B529B #ffffff00", }}>
+        <div id="challenge-modal" className={`absolute w-3/4 z-1000 top-1/8 left-1/8 h-3/4 overflow-y-scroll text-center bg-[#EAD3FF] border-[#812990] border-4 text-[#812990] font-pixel p-6 px-10 flex flex-col gap-4'`} 
+            style={{scrollbarColor: "#1B529B #ffffff00", }}>
             <div className='flex justify-between flex-wrap-reverse text-wrap'>
                 <div className='font-sync text-left text-2xl'>
                     <p className='font-bold'>{challenge.name.toUpperCase()}</p>
@@ -65,7 +69,7 @@ export default function ChallengeModal({session, challenge, callback}) {
             <div className="text-xl" dangerouslySetInnerHTML={{ __html: challenge.prompt }} />
 
             {/* files */}
-            { challenge.files.length !== 0 && 
+            { challenge.file && challenge.files.length !== 0 && 
                 <div>
                     <p className='text-left underline text-xl text-[#1B529B]'>Files:</p>
                     <div id="files-list" className='flex gap-16'>
@@ -83,16 +87,19 @@ export default function ChallengeModal({session, challenge, callback}) {
 
                 
             {/* buttons for hints */}
-            <div>
-                <p className='text-left underline text-xl text-[#1B529B]'>Hints:</p>
-                <div className='flex flex-col gap-3'>
-                {
-                    challenge.hints.map((hint, i)=>(
-                        <Hint hint={hint} ind={i} key={i} />
-                    ))
-                }
+            {
+                challenge.hints && challenge.hints.length !== 0 &&
+                <div>   
+                    <p className='text-left underline text-xl text-[#1B529B]'>Hints:</p>
+                    <div className='flex flex-col gap-3'>
+                    {
+                        challenge.hints.map((hint, i)=>(
+                            <Hint hint={hint} ind={i} key={`chal_${challenge.id}_${i}`} />
+                        ))
+                    }
+                    </div>
                 </div>
-            </div>
+            }
 
             <form onSubmit={handle_answer_check}>
                 <div className='flex gap-2 justify-center mt-4'>

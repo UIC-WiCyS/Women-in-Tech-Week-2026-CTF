@@ -21,8 +21,6 @@ export default function ChallengesOverview({session}) {
     };
 
     useEffect(() => {    
-        // TODO: fix cookies and reset session
-
         // check if session exists
         // fetch completed challenges
         fetch_challenges();
@@ -30,9 +28,10 @@ export default function ChallengesOverview({session}) {
     }, [session])
 
     function handle_solved() {
-        setModal(false)
+        setModal(false);
         // refetch challenges
-        fetch_challenges()
+        fetch_challenges();
+        window.location.reload(); 
     }
     
 

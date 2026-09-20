@@ -10,12 +10,8 @@ export default function Login({callback}) {
     const [input, setInput] = useState("");
 
     async function handle_login(event) {
-        event.preventDefault(); 
-        var data = await login(input);
-        if (data != null)
-        {
-            callback(data);
-        }
+        event.preventDefault();
+        callback(input);
     }
 
     return (

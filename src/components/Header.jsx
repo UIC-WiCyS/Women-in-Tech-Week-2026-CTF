@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 
 export default function Header({logout}) {
     return (
-        <nav className='flex gap-8 font-pixel text-2xl justify-around mx-8 my-4 select-none '>
+        <nav className='flex gap-8 font-pixel text-2xl justify-around mx-8 my-4 select-none flex-wrap'>
             <Link className={styles.nav_link} to="/about">About</Link>
             <Link className={styles.nav_link} to="/">Challenges</Link>
             

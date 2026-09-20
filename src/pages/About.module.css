@@ -32,8 +32,8 @@
   box-shadow: rgba(35, 35, 195, 0.2) 0px 7px 29px 0px;
   background: #EAD3FF;
   margin: 0 auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2rem;
+  /* margin-bottom: 5%; */
 
   position: relative;
 }
@@ -78,6 +78,7 @@
   font-size: large;
   text-decoration: underline;
   transition: color 0.2s ease;
+  font-family: "Syncopate", sans-serif;
 }
 
 .cyberpackLink:hover {
