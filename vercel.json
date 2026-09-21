@@ -1,10 +1,1 @@
-{ 
-    "cleanUrls": false,
-    "routes": [
-        { 
-            "source": "/((?!.*\\.).*)", 
-            "destination": "/", 
-            "status": 200 
-        }
-    ] 
-}
+{ "cleanUrls": false, "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
