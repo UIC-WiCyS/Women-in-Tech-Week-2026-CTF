@@ -11,7 +11,9 @@ export default function Login({callback}) {
 
     async function handle_login(event) {
         event.preventDefault();
-        callback(input);
+
+        if (event != "")
+            callback(input);
     }
 
     return (

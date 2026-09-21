@@ -72,7 +72,7 @@ export default function ChallengeModal({session, challenge, callback}) {
             <div className="text-xl" dangerouslySetInnerHTML={{ __html: challenge.prompt }} />
 
             {/* files */}
-            { challenge.file && challenge.files.length !== 0 && 
+            { challenge.files && challenge.files.length !== 0 && 
                 <div>
                     <p className='text-left underline text-xl text-[#1B529B]'>Files:</p>
                     <div id="files-list" className='flex gap-16'>
