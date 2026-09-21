@@ -78,7 +78,7 @@ export default function ChallengeModal({session, challenge, callback}) {
                     <div id="files-list" className='flex gap-16'>
                     {
                         challenge.files.map((file_path, i)=>(
-                            <a className={styles.files_download} key={i} href={import.meta.env.BASE_URL + "challenges/" + file_path} download>
+                            <a className={styles.files_download} key={i} href={import.meta.env.BASE_URL + "challenges/" + file_path} download={file_path}>
                                 <Download size={20}/>
                                 {file_path}
                             </a>
