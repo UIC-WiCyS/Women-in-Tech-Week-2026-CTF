@@ -8,7 +8,7 @@
     ],
     "routes": [
         { 
-            "src": "/[^.]+", 
+            "source": "/((?!challenges/katherine_launch|assets/).*)", 
             "dest": "/", 
             "status": 200 
         }
