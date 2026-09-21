@@ -8,7 +8,7 @@
     ],
     "routes": [
         { 
-            "source": "/((?!challenges/katherine_launch|assets/).*)", 
+            "source": "/((?!challenges/|assets/|animalsChallenges/).*)", 
             "dest": "/", 
             "status": 200 
         }
