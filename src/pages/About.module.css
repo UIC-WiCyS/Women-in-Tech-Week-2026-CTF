@@ -78,7 +78,7 @@
   font-size: large;
   text-decoration: underline;
   transition: color 0.2s ease;
-  font-family: "Syncopate", sans-serif;
+  font-family: "VT323", monospace;
 }
 
 .cyberpackLink:hover {
