@@ -1,1 +1,17 @@
-{ "cleanUrls": false, "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
+{ 
+    "cleanUrls": false,
+    "routes": [
+        {
+            "src": "/katherine_launch",
+            "dest": "/katherine_launch",
+            "headers": {
+                "Content-Type": "application/octet-stream",
+                "Content-Disposition": "attachment; filename=\"katherine_launch\""
+            }
+        },
+        { 
+            "src": "/((?!.*\\.).*)", 
+            "dest": "/"
+        }
+    ] 
+}
